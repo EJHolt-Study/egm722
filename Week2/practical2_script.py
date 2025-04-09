@@ -40,7 +40,7 @@ def generate_handles(labels, colors, edge='k', alpha=1):
 
 # adapted this question: https://stackoverflow.com/q/32333870
 # answered by SO user Siyh: https://stackoverflow.com/a/35705477
-def scale_bar(ax, length=20, location=(0.92, 0.95)):
+def scale_bar(ax, length=10, location=(0.92, 0.95)):
     """
     Create a scale bar in a cartopy GeoAxes.
 
@@ -69,9 +69,9 @@ def scale_bar(ax, length=20, location=(0.92, 0.95)):
     ax.plot([sbx, sbx-length*1000], [sby, sby], color='k', linewidth=4, transform=ax.projection) # plot a thick black line
     ax.plot([sbx-(length/2)*1000, sbx-length*1000], [sby, sby], color='w', linewidth=2, transform=ax.projection) # plot a white line from 0 to halfway
 
-    ax.text(sbx, sby-(length/4)*1000, f"{length} km", ha='center', transform=ax.projection, fontsize=6) # add a label at the right side
-    ax.text(sbx-(length/2)*1000, sby-(length/4)*1000, f"{int(length/2)} km", ha='center', transform=ax.projection, fontsize=6) # add a label in the center
-    ax.text(sbx-length*1000, sby-(length/4)*1000, '0 km', ha='center', transform=ax.projection, fontsize=6) # add a label at the left side
+    ax.text(sbx, sby-(length/4)*1000, f"{length} km", ha='center', transform=ax.projection, fontsize=3) # add a label at the right side
+    ax.text(sbx-(length/2)*1000, sby-(length/4)*1000, f"{int(length/2)} km", ha='center', transform=ax.projection, fontsize=3) # add a label in the center
+    ax.text(sbx-length*1000, sby-(length/4)*1000, '0 km', ha='center', transform=ax.projection, fontsize=3) # add a label at the left side
 
     return ax
 
