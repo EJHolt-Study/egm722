@@ -134,8 +134,16 @@ river_feat = ShapelyFeature(rivers['geometry'], # first argument is the geometry
                             linewidth=0.2) # set the linewidth to be 0.2 pt
 ax.add_feature(river_feat) # add the collection of features to the map
 
+towns_only = towns.loc[towns['STATUS'] == 'Town'] # Separating towns from dataset
+
+cities_only = towns.loc[towns['STATUS'] == 'City'] # Separating cities from dataset
+
 # ShapelyFeature creates a polygon, so for point data we can just use ax.plot()
-town_handle = ax.plot(towns.geometry.x, towns.geometry.y, 's', color='0.5', ms=6, transform=ccrs.PlateCarree())
+# Towns plotting
+town_handle = ax.plot(towns_only.geometry.x, towns_only.geometry.y, 's', color='0.5', ms=6, transform=ccrs.PlateCarree())
+
+# Cities plotting
+city_handle = ax.plot(cities_only.geometry.x, cities_only.geometry.y, 'D', color='0.5', ms=6, transform=ccrs.PlateCarree())
 
 # generate a list of handles for the county datasets
 # first, we add the list of names, then the list of colors, and finally we set the transparency
@@ -153,8 +161,8 @@ nice_names = [name.title() for name in county_names]
 
 # ax.legend() takes a list of handles and a list of labels corresponding to the objects 
 # you want to add to the legend
-handles = county_handles + water_handle + river_handle + town_handle # use '+' to concatenate (combine) lists
-labels = nice_names + ['Lakes', 'Rivers', 'Towns']
+handles = county_handles + water_handle + river_handle + town_handle + city_handle # use '+' to concatenate (combine) lists
+labels = nice_names + ['Lakes', 'Rivers', 'Towns', 'Cities']
 
 leg = ax.legend(handles, labels, title='Legend', title_fontsize=12, 
                  fontsize=10, loc='upper left', frameon=True, framealpha=1)
