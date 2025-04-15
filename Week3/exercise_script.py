@@ -12,15 +12,16 @@ import matplotlib.patches as mpatches
 # try to print the results to the screen using the format method demonstrated in the workbook
 
 # load the necessary data here and transform to a UTM projection
-counties = gpd.read_file('data_files/Counties.shp') # load the Counties shapefile
-wards  = gpd.read_file('data_files/NI_Wards.shp') # load the Wards shapefile
-roads = gpd.read_file('data_files/NI_roads.shp') # load the Roads shapefile
-
-
-
+counties = gpd.read_file('Week3/data_files/Counties.shp') # load the Counties shapefile
+wards  = gpd.read_file('Week3/data_files/NI_Wards.shp') # load the Wards shapefile
+roads = gpd.read_file('Week3/data_files/NI_roads.shp') # load the Roads shapefile
 
 # your analysis goes here...
 
+
+
+
+# print(wards.head()) Test print when required
 # ---------------------------------------------------------------------------------------------------------------------
 # # below here, you may need to modify the script somewhat to create your map.
 # # create a crs using ccrs.UTM() that corresponds to our CRS
