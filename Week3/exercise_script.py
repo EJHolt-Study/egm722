@@ -12,6 +12,9 @@ import matplotlib.patches as mpatches
 # try to print the results to the screen using the format method demonstrated in the workbook
 
 # load the necessary data here and transform to a UTM projection
+counties = gpd.read_file('data_files/Counties.shp') # load the Counties shapefile
+wards  = gpd.read_file('data_files/NI_Wards.shp') # load the Counties shapefile
+
 
 # your analysis goes here...
 
