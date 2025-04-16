@@ -17,11 +17,18 @@ wards  = gpd.read_file('Week3/data_files/NI_Wards.shp') # load the Wards shapefi
 roads = gpd.read_file('Week3/data_files/NI_roads.shp') # load the Roads shapefile
 
 # your analysis goes here...
+# Converting datasets to EPSG: 2157
+roads_itm = roads.to_crs(epsg=2157)
+wards_itm = wards.to_crs(epsg=2157)
+counties_itm = counties.to_crs(epsg=2157)
 
+# Spatially joining wards and counties
+# wc_combined =
 
-
-
-# print(wards.head()) Test print when required
+print(wards_itm.info())
+print(counties_itm.info())# Test print when required
+# print(counties_itm.crs)
+# print(roads_itm.crs)
 # ---------------------------------------------------------------------------------------------------------------------
 # # below here, you may need to modify the script somewhat to create your map.
 # # create a crs using ccrs.UTM() that corresponds to our CRS
