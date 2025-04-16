@@ -23,10 +23,17 @@ wards_itm = wards.to_crs(epsg=2157)
 counties_itm = counties.to_crs(epsg=2157)
 
 # Spatially joining wards and counties
-# wc_combined =
+wc_combined = gpd.sjoin(counties_itm, wards_itm, how='inner', lsuffix='left', rsuffix='right')
 
-print(wards_itm.info())
-print(counties_itm.info())# Test print when required
+# Creating summarised GDF
+grouped_cnty_pop = wc_combined.groupby(['CountyName'])
+print(grouped_cnty_pop['Population'].sum())
+
+
+
+
+# print(wc_combined.info())# Test print when required
+# print(wc_combined.head())# Test print when required
 # print(counties_itm.crs)
 # print(roads_itm.crs)
 # ---------------------------------------------------------------------------------------------------------------------
