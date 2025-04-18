@@ -76,7 +76,7 @@ def scale_bar(ax, length=20, location=(0.92, 0.95)):
     return ax
 
 # load the datasets
-outline = gpd.read_file(os.path.abspath('data_files/NI_outline.shp'))
+outline = gpd.read_file(os.path.abspath('Week3/data_files/NI_outline.shp'))
 towns = gpd.read_file(os.path.abspath('data_files/Towns.shp'))
 water = gpd.read_file(os.path.abspath('data_files/Water.shp'))
 rivers = gpd.read_file(os.path.abspath('data_files/Rivers.shp'))

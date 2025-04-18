@@ -6,7 +6,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 from cartopy.feature import ShapelyFeature
 import cartopy.crs as ccrs
 import matplotlib.patches as mpatches
-from practical2_script_copy import generate_handles
+from generate_handles import generate_handles
 
 # ---------------------------------------------------------------------------------------------------------------------
 # in this section, write the script to load the data and complete the main part of the analysis.
@@ -16,6 +16,7 @@ from practical2_script_copy import generate_handles
 counties = gpd.read_file('Week3/data_files/Counties.shp') # load the Counties shapefile
 wards  = gpd.read_file('Week3/data_files/NI_Wards.shp') # load the Wards shapefile
 roads = gpd.read_file('Week3/data_files/NI_roads.shp') # load the Roads shapefile
+## = gpd.read_file('Week3/data_files/NI_roads.shp') # load the Roads shapefile
 
 # your analysis goes here...
 # Converting datasets to EPSG: 2157
