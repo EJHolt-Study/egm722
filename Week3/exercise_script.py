@@ -6,6 +6,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 from cartopy.feature import ShapelyFeature
 import cartopy.crs as ccrs
 import matplotlib.patches as mpatches
+from practical2_script import generate_handles
 
 # ---------------------------------------------------------------------------------------------------------------------
 # in this section, write the script to load the data and complete the main part of the analysis.
@@ -36,6 +37,8 @@ grouped_cnty_pop = wc_combined.groupby(['CountyName'])
 # print(wc_combined.head())# Test print when required
 # print(counties_itm.crs)
 # print(roads_itm.crs)
+# ---------------------------------------------------------------------------------------------------------------------
+
 # ---------------------------------------------------------------------------------------------------------------------
 # below here, you may need to modify the script somewhat to create your map.
 # create a crs using ccrs.UTM() that corresponds to our CRS
