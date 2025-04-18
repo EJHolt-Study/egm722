@@ -1,3 +1,5 @@
+import matplotlib.patches as mpatches
+
 def generate_handles(labels, colors, edge='k', alpha=1):
     """
     Generate matplotlib patch handles to create a legend of each of the features in the map.

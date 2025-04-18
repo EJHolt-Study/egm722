@@ -80,7 +80,7 @@ outline = gpd.read_file(os.path.abspath('Week3/data_files/NI_outline.shp'))
 towns = gpd.read_file(os.path.abspath('data_files/Towns.shp'))
 water = gpd.read_file(os.path.abspath('data_files/Water.shp'))
 rivers = gpd.read_file(os.path.abspath('data_files/Rivers.shp'))
-counties = gpd.read_file(os.path.abspath('data_files/Counties.shp'))
+counties = gpd.read_file(os.path.abspath('../data_files/Counties.shp'))
 
 ni_utm = ccrs.UTM(29)  # create a Universal Transverse Mercator reference system to transform our data.
 # NI is in UTM Zone 29, so we pass 29 to ccrs.UTM()

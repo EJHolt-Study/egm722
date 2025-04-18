@@ -20,15 +20,15 @@ roads = gpd.read_file('Week3/data_files/NI_roads.shp') # load the Roads shapefil
 
 # your analysis goes here...
 # Converting datasets to EPSG: 2157
-roads_itm = roads.to_crs(epsg=2157)
-wards_itm = wards.to_crs(epsg=2157)
-counties_itm = counties.to_crs(epsg=2157)
+roads = roads.to_crs(epsg=2158)
+wards = wards.to_crs(epsg=2158)
+counties = counties.to_crs(epsg=2158)
 
 # Spatially joining wards and counties
-wc_combined = gpd.sjoin(counties_itm, wards_itm, how='inner', lsuffix='left', rsuffix='right')
+#wc_combined = gpd.sjoin(counties_itm, wards_itm, how='inner', lsuffix='left', rsuffix='right')
 
 # Creating summarised GDF
-grouped_cnty_pop = wc_combined.groupby(['CountyName'])
+#grouped_cnty_pop = wc_combined.groupby(['CountyName'])
 # print(grouped_cnty_pop['Population'].sum())
 
 
