@@ -72,7 +72,10 @@ ni_outline = ni_outline.to_crs(epsg=2158)
 
 # next, create the figure and axis objects to add the map to
 ni_utm = ccrs.UTM(29) # note that this matches with the CRS of our image
-fig, ax = plt.subplots(1, 1, figsize=(10, 10), subplot_kw=dict(projection=ni_utm))
+fig, ax = plt.subplots(1, 1, figsize=(10, 10), subplot_kw=dict(projection=ni_utm)) # create figure outline
+ax.set_extent([xmin, xmax, ymin, ymax], crs=ni_utm) # Setting figure extent
+
+
 
 # now, add the satellite image to the map
 
