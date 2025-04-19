@@ -62,7 +62,13 @@ with rio.open('data_files/NI_Mosaic.tif') as dataset:
 # your code goes here!
 # start by loading the outlines and point data to add to the map
 counties = gpd.read_file('Week3/data_files/Counties.shp') # load the Counties Polygons
-settlements = gpd.read_file('Week2/data_files/Towns.shp') # load the settlements Point
+settlements = gpd.read_file('Week2/data_files/Towns.shp') # load the settlements Points
+ni_outline = gpd.read_file('Week3/data_files/NI_outline.shp') # load the NI outline Polygon
+
+# Converting shapefile CRSs
+counties = counties.to_crs(epsg=2158)
+settlements = settlements.to_crs(epsg=2158)
+ni_outline = ni_outline.to_crs(epsg=2158)
 
 # next, create the figure and axis objects to add the map to
 ni_utm = ccrs.UTM(29) # note that this matches with the CRS of our image
