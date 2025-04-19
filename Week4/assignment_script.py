@@ -61,7 +61,9 @@ with rio.open('data_files/NI_Mosaic.tif') as dataset:
 
 # your code goes here!
 # start by loading the outlines and point data to add to the map
-
+counties = gpd.read_file('Week3/data_files/Counties.shp') # load the Counties shapefile
+wards  = gpd.read_file('Week3/data_files/NI_Wards.shp') # load the Wards shapefile
+settlements = gpd.read_file('Week2/data_files/Towns.shp')
 
 # next, create the figure and axis objects to add the map to
 
